@@ -1,1 +1,1 @@
-# CU_ResearchAI
+Central university. The Omut AI Research 2025 homework. 
