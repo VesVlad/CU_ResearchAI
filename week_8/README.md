@@ -5,16 +5,16 @@
     В этом задании вам нужно будет научиться изменять поведение моделей с помощью SAE.
 
 **Постановка**
-Пусть декодер $W_{dec} \in \R^{F \times d}$ состоит из строк $e_{i} \in \R^d$, а $\bold h \in \R^d$ – хиден модели. 
+Пусть декодер $W_{dec} \in \mathbb{R}^{F \times d}$ состоит из строк $e_{i} \in \mathbb{R}^d$, а ${\bf h} \in \mathbb{R}^d$ – хиден модели. 
 
 
 #### Способ 1 (Default)
 Характекризуется следующей формулой:
-$\tilde{h} = h + \alpha \cdot e_{i}, \ \alpha \in \R^{+}$     
+$\tilde{h} = h + \alpha \cdot e_{i}, \ \alpha \in \mathbb{R}^{+}$     
 
 #### Способ 2 (Normalized)
 Характекризуется следующей формулой:
-$\tilde{h} = \frac{h + \alpha \cdot e_{i}}{||h + \alpha \cdot e_{i}||} \cdot ||\bold h||, \ \alpha \in \R^{+}$    
+$\tilde{h} = \frac{h + \alpha \cdot e_{i}}{||h + \alpha \cdot e_{i}||} \cdot ||{\bf h}||, \ \alpha \in \mathbb{R}^{+}$    
 
 ### Результаты
 В качестве модели, которую стирим, возьмем [*google/gemma-2-9b-it*](https://huggingface.co/google/gemma-2-9b-it). 
