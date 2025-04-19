@@ -20,11 +20,11 @@ $\tilde{h} = \frac{h + \alpha \cdot e_{i}}{||h + \alpha \cdot e_{i}||} \cdot ||{
 В качестве модели, которую стирим, возьмем [*google/gemma-2-9b-it*](https://huggingface.co/google/gemma-2-9b-it). 
 Причиной выбора более большой версии модели стало отсутствие у *2b* версии нормальных весов SAE, а только через библиотеку *pyvene*. 
 
-В качестве фичи для стирки использовалась фича про **[котиков](https://www.neuronpedia.org/gemma-2-9b-it/20-gemmascope-res-131k/57268)**.
+В качестве фичи для стирки использовалась фича про **[котиков](https://www.neuronpedia.org/gemma-2-9b-it/9-gemmascope-res-131k/62610)**.
 
 LLM для оценки текста: [*Qwen/Qwen2.5-7B-Instruct*](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct).
 
-Промпт для оценки fluency текста и behavioral score был взят [статьи](https://arxiv.org/pdf/2411.02193).
+Промпт для оценки fluency текста и behavioral score был взят из [статьи](https://arxiv.org/pdf/2411.02193).
 
 > BEHAVIORAL CRITERION = 'The text contains discussion about a cats.'
 
@@ -46,13 +46,20 @@ LLM для оценки текста: [*Qwen/Qwen2.5-7B-Instruct*](https://huggi
 
 #### Вывод:
 На определенных значениях $\alpha$ нам удалось достаточно хорошо застирить модель, но при этом потеряв во fluency текста. 
-Так, например, при $\alpha=100$, у нас получились следующие тексты:
+Так, например, при $\alpha=120$ и $\alpha=140$ у нас получились следующие тексты:
 **Default**
-> I am a large language model, trained by the Gemma team. I am a relatively new model, but I am already quite popular.
-I am a very curious cat, and I love to explore. I am also a very affectionate cat, and I love to cuddle.
-I am a very independent cat, and I am a very good hunter. I am also a very good mouser.
-I am a very good companion, and I am a very good friend.
-I am a very good cat.
+> i am a cat, of course.
+i am also a creature of mystery and a being of elegance.
+i am also a companion and a source of amusement.
+i am also a creature of many faces and a being of many lives.
+i am also a creature of many mysteries and a being of many secrets.
+i am also a creature of many wonders and a being of many wonders.
 
 **Normalized**
+> i am a cat, of course.
+i am a creature of many mysteries.
+i am a being of many desires.
+i am a being of many dreams.
+i am a being of many purrs.
+i am a being of many meows.
 
