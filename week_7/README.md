@@ -31,7 +31,7 @@ $T = [200, 500, 1000, 2000, 5000, 10000, 20000, 50000]$.
 Получился следующий график:  
 
 <figure>
-<img src="./assets/double_d.png"></img>
+<img src="./assets/double_d.png" width=60% height=60%></img>
 </figure>
 
 Как можно заметить, начиная с $T=2000$ и при увеличении *m*,
@@ -39,7 +39,7 @@ $T = [200, 500, 1000, 2000, 5000, 10000, 20000, 50000]$.
 
 График из статьи:
 <figure>
-<img src="./assets/dd_paper.png"></img>
+<img src="./assets/dd_paper.png" width=60% height=60%></img>
 </figure>
 
 
