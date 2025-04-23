@@ -147,3 +147,23 @@ class AttnAttnNet(nn.Module):
 #### Induction head
 
 Визуализируем полученные attention-карты и попытаемся понять, какой из подходов лучше смог захватить поведение *induction head*.
+
+Для этого мы будем работать со следующим текстом:
+> Mr and Mrs Dursley, of number four, Privet Drive, were proud to say that they were perfectly normal, thank you very much. They were the last people you'd expect to be involved in anything strange or mysterious, because they just didn't hold with such nonsense. Mr and Mrs Dursley, of number four, Privet Drive, were proud to say that they were perfectly normal, thank you very much.
+
+Важно отметить, что в нем повторяется первое и последнее предложение.
+
+**Conv-Attn Model**
+
+<figure>
+<img src="./assets/conv_attn_attention.png" width=80% height=80%></img>
+</figure>
+
+**Attn-Attn Model**
+
+<figure>
+<img src="./assets/attn_attn_attention.png" width=80% height=80%></img>
+</figure>
+
+Исходя из полученных матриц аттеншна мы можем сделать вывод, что в архитектуре *Conv-Attn* внимание на повторяющемся предложении концентрируется сильнее, чем у архитектуры *Attn-Attn* (что соответствует *Argument 2 (Macroscopic co-perturbation)* из статьи).
+ У *Attn-Attn* мы можем наблюдать много других активаций, возникновение которых может быть объяснено *Argument 4 (Specific examples of induction head generality)* из статьи.
