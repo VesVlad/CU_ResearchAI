@@ -113,33 +113,33 @@ class AttnAttnNet(nn.Module):
 
 Ниже представлены изображения по каждому из каналов. 
 <figure>
-<img src="./assets/feature_map_1.png"></img>
+<img src="./assets/feature_map_1.png" width=60% height=60%></img>
 </figure>
 
 <figure>
-<img src="./assets/feature_map_2.png"></img>
+<img src="./assets/feature_map_2.png" width=60% height=60%></img>
 </figure>
 
 <figure>
-<img src="./assets/feature_map_3.png"></img>
+<img src="./assets/feature_map_3.png" width=60% height=60%></img>
 </figure>
 
 Посмотрим на активации весов в фильтрах, для наглядности, ограничимся четырьмя. Для контрастности значений, будем смотреть на абсолютные значения.
 Мы видим, что помимо того, что по третьему каналу *future* значения ниже, чем в других каналах, есть явное влияние первого канала *pred* и второго канала *current* на фичи внутри окна свертки, что говорит о неком «подмешивании» предыдущего значения с весом *pred* на текущую позицию внутри окна. При этом, значения *pred* немного, но меньше значений *current*, что говорит о том, что текущая фича будет учтена важнее предыдущей.
 <figure>
-<img src="./assets/feature_map_1_2.png"></img>
+<img src="./assets/feature_map_1_2.png" width=60% height=60%></img>
 </figure>
 
 <figure>
-<img src="./assets/feature_distrib_1_2.png"></img>
+<img src="./assets/feature_distrib_1_2.png" width=60% height=60%></img>
 </figure>
 
 <figure>
-<img src="./assets/feature_map_3_4.png"></img>
+<img src="./assets/feature_map_3_4.png" width=60% height=60%></img>
 </figure>
 
 <figure>
-<img src="./assets/feature_distrib_3_4.png"></img>
+<img src="./assets/feature_distrib_3_4.png" width=60% height=60%></img>
 </figure>
 
 Эти примеры явно показывают, что <u>архитектуры, на основе свертки могут аппроксимировать поведение *smeared keys*</u>.
@@ -156,13 +156,13 @@ class AttnAttnNet(nn.Module):
 **Conv-Attn Model**
 
 <figure>
-<img src="./assets/conv_attn_attention.png" width=80% height=80%></img>
+<img src="./assets/conv_attn_attention.png" width=60% height=60%></img>
 </figure>
 
 **Attn-Attn Model**
 
 <figure>
-<img src="./assets/attn_attn_attention.png" width=80% height=80%></img>
+<img src="./assets/attn_attn_attention.png" width=60% height=60%></img>
 </figure>
 
 Исходя из полученных матриц аттеншна мы можем сделать вывод, что в архитектуре *Conv-Attn* внимание на повторяющемся предложении концентрируется сильнее, чем у архитектуры *Attn-Attn* (что соответствует *Argument 2 (Macroscopic co-perturbation)* из статьи).
