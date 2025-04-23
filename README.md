@@ -1,1 +1,1 @@
-Central university. The Omut AI Research 2025 homework. 
+Central university. The Omut AI Research 2025 homework. '
