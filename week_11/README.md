@@ -46,8 +46,8 @@ $$
 
 *Decoder*
 <figure>
-<img src="./assets/decoder.png" width=60% 
-height=60%></img>
+<img src="./assets/decoder.png" width=30% 
+height=30%></img>
 </figure>
 
 - Полученные в енкодере $[\hat{v}; \hat{l}]$ после *N* слоев фичи подаются в *CA* декодера для последующей генерации ответа.
