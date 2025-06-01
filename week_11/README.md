@@ -27,25 +27,19 @@ height=70%></img>
 - Для текстового енкодера используются первые 6 слоев обычного берта, а для *Skip-connected network* (*N* оранжевых блоков на изображении) – последние 6 слоев.
 - Блок *Skip-connected network* содержит в себе *Asymmetric co-attention*, который состоит из *Self-Attention (SA)*,*Cross-Attention (CA)* и *FFN* слоев и работает по следующему принципу:
 Пусть $l^{n-1}$ и $v^{n-1}$ – текстовые и визуальные фичи соответственно. Тогда:
-% <![CDATA[
-$$
+```math
 \begin{align}
  l^{n}_{SA} = LN(SA(l^{n-1}) + l^{n-1}) \\
  l^{n}_{CA} = LN(CA(l^{n}_{SA}, v^{n-1})) \\
  l^{n} = LN(FFN(l^{n}_{CA}) + l^{n}_{CA})
 \end{align} 
-%]]>
-$$
 где $LN$ – $LayerNorm$.
 - В блоке *Connected Attention* фичи $l^{S}$ и $v^{S}$ объединяются после *S* слоев блока *Skip-connected network* и передаются в *SA* и *FFN*:
-% <![CDATA[
-$$
+```math
 \begin{align}
 [v_{SA}; l_{SA}] = LN(SA([v^{S}; l^{S}]) + [v^{S}; l^{S}]) \\
 [\hat{v}; \hat{l}] = LN(FFN([v_{SA}; l_{SA}]) + [v_{SA}; l_{SA}])
 \end{align}
-$$
-%]]>
 Далее фичи $\hat{v}$ и $\hat{l}$ передаются в следующий *Skip-connected block* и так *N* раз.
 
 *Decoder*
